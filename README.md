@@ -1,12 +1,8 @@
-## Flutter Beautiful Login/Signup Page Design & Animation
+## Flutter Animated Login by Code Crafts
 
-A part of #flutter100daysofcode. Let's create a beautiful and animated login/signup page UI with Flutter.
+Beautifully crafted login & sign up screens for your next project.
 
-Designed by [Mohammed Naser Kronz (@m7md.n.k.20)]
+Disgned by [Mohammed Naser AlKronz => m7md.n.k.20@gmail.com]
 
-
-## ScreenShot
-
-<img src="assets/screenshots/home.png" height="500em"/>&nbsp;<img src="assets/screenshots/login.png" height="500em" />
-&nbsp;<img src="assets/screenshots/signup.png" height="500em" />
+Do you have project in your mind? Just connect with us
 

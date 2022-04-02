@@ -1,100 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:login_page_day_23/animation/FadeAnimation.dart';
-import 'package:login_page_day_23/login.dart';
-import 'package:login_page_day_23/signup.dart';
+import 'package:flutter_login/Screens/login/login.dart';
+import 'package:flutter_login/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    )
-  );
+  runApp(MyApp());
 }
 
-class HomePage extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height,
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  FadeAnimation(1, Text("Welcome", style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30
-                  ),)),
-                  SizedBox(height: 20,),
-                  FadeAnimation(1.2, Text("Automatic identity verification which enables you to verify your identity", 
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 15
-                  ),)),
-                ],
-              ),
-              FadeAnimation(1.4, Container(
-                height: MediaQuery.of(context).size.height / 3,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/illustration.png')
-                  )
-                ),
-              )),
-              Column(
-                children: <Widget>[
-                  FadeAnimation(1.5, MaterialButton(
-                    minWidth: double.infinity,
-                    height: 60,
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                    },
-                    color: Colors.yellow[400],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50)
-                    ),
-                    child: Text("Login", style: TextStyle(
-                      fontWeight: FontWeight.w600, 
-                      fontSize: 18
-                    ),),
-                  )),
-                  SizedBox(height: 20,),
-                  FadeAnimation(1.6, Container(
-                    padding: EdgeInsets.only(top: 3, left: 3),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()));
-                      },
-                      color: Colors.yellow[400],
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50)
-                      ),
-                      child: Text("Sign up", style: TextStyle(
-                        fontWeight: FontWeight.w600, 
-                        fontSize: 18
-                      ),),
-                    ),
-                  ))
-                ],
-              )
-            ],
-          ),
-        ),
+    return MaterialApp(
+      title: 'Flutter Animated Login',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme)
       ),
+      home: LoginScreen(),
     );
   }
 }
